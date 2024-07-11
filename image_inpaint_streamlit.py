@@ -12,13 +12,15 @@ import io
 import base64
 from PIL import Image
 
-STREAMLIT_STATIC_PATH = pathlib.Path(st.__path__[0]) / 'static'
+
+# STREAMLIT_STATIC_PATH = pathlib.Path(st.__path__[0]) / 'static'
 
 # We create a downloads directory within the streamlit static asset directory
 # and we write output files to it.
-DOWNLOADS_PATH = (STREAMLIT_STATIC_PATH / "downloads")
-if not DOWNLOADS_PATH.is_dir():
-    DOWNLOADS_PATH.mkdir()
+# DOWNLOADS_PATH = (STREAMLIT_STATIC_PATH / "downloads")
+# if not DOWNLOADS_PATH.is_dir():
+#     DOWNLOADS_PATH.mkdir()
+
 
 def get_image_download_link(img, filename, text):
     """Generates a link to download a particular image file."""
@@ -54,7 +56,7 @@ if uploaded_file is not None:
     canvas_result = st_canvas(
         fill_color='gray',
         stroke_width=stroke_width,
-        stroke_color='black',
+        stroke_color='green',
         background_image=Image.open(uploaded_file).resize((h_, w_)),
         update_streamlit=True,
         height=h_,
